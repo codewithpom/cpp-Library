@@ -69,8 +69,8 @@ struct problems
 
     static int *sort_accending(int arr[], int size)
     {
-        int* return_array;
-        return_array = (int*)malloc(size * sizeof(int));
+        int *return_array;
+        return_array = (int *)malloc(size * sizeof(int));
         memcpy(return_array, arr, size * sizeof(int));
         int i, j;
         for (i = 0; i < size - 1; i++)
@@ -79,8 +79,55 @@ struct problems
             for (j = 0; j < size - i - 1; j++)
                 if (return_array[j] > return_array[j + 1])
                     core::swap(&return_array[j], &return_array[j + 1]);
-        
+
         return return_array;
     }
+    /**
+ * Sort the array is decending order
+ *
+ * @param arr The array int.
+ * @param size Size of the array
+ * @return The arr in decensing order, or empty array if the array is empty.
+ */
+    static int *sort_decending(int arr[], int size)
+    {
+        if (size < 2)
+        {
+            return arr;
+        }
+        
 
+        int *return_array;
+        return_array = (int *)malloc(size * sizeof(int));
+        memcpy(return_array, arr, size * sizeof(int));
+        return_array = sort_accending(return_array, size);
+        reverse_an_array(return_array, size);
+        return return_array;
+        // int i, j;
+        // for (i = 0; i < size - 1; i++)
+
+        //     // Last i elements are already in place
+        //     for (j = 0; j < size - i - 1; j++)
+        //         if (return_array[j] < return_array[j + 1])
+        //             core::swap(&return_array[j], &return_array[j + 1]);
+
+        // return return_array;
+    }
+
+    static int find_index(int arr[], int size, int element)
+    {
+        for (int i = 0; i < size; i++)
+        {
+            if (arr[i] == element)
+            {
+                return i;
+            }
+        }
+
+        /*
+            The time complexity of the above logic is O(n)
+        */
+
+        return -1;
+    }
 };

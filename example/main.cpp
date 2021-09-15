@@ -30,7 +30,14 @@ int main()
     int *accending_order = problems::sort_accending(arr, 4);
     std::cout << "The array in accending order is: ";
     problems::show_arr(accending_order, 4);
-    
+    std::cout << "-------------------------------------------------------\n";
+    int *descending_order = problems::sort_decending(arr, 4);
+    std::cout << "The array in descensing order is: ";
+    problems::show_arr(descending_order, 4);
+    std::cout << "-------------------------------------------------------\n";
+    int index_of_3 = problems::find_index(arr, 4, 3);
+    std::cout << "The index of 3 in the array is: " << index_of_3 << std::endl;
+    std::cout << "If the element is not in the list it will return -1\n";
     
 }
 
