@@ -1,28 +1,20 @@
 #include <iostream>
 #include <string>
-
+using namespace std;
 
 namespace strings
 {
-    int lower(char string[], int size)
+    string to_lower(string s)
     {
-        char *return_string = (char *)malloc(size * sizeof(char *));
-        memcpy(return_string, string, size * sizeof(char *));
-        int element;
-
-        for (int i = 0; i < size; i++)
-        {
-            string[i] = tolower(string[i]);
-            
-        }
-        
-        return 0;
+        for (char &c : s)
+            c = tolower(c);
+        return s;
     }
-
-
 } // namespace strings
 
 int main()
 {
-    printf("%c", strings::UPPER_CASE_LETTERS[0]);
+    string sentence = "Hello World";
+    char *lower_sentence = strings::to_lower(sentence);
+    printf("%c", lower_sentence);
 }
