@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include "core.h"
-struct problems
+#include "core.hpp"
+
+namespace problems
 {
-    static int max_element_array(int arr[], int size)
+    int max_element_array(int arr[], int size)
     {
         int element;
         int max_element = arr[0];
@@ -19,7 +20,7 @@ struct problems
         return max_element;
     }
 
-    static void reverse_an_array(int arr[], int size)
+    void reverse_an_array(int arr[], int size)
     {
         int start = 0;
         int end = size - 1;
@@ -32,7 +33,7 @@ struct problems
         }
     }
 
-    static void reverse_array_by_index(int arr[], int size, int start, int end)
+    void reverse_array_by_index(int arr[], int size, int start, int end)
     {
         while (start < end)
         {
@@ -44,7 +45,7 @@ struct problems
         }
     }
 
-    static void show_arr(int arr[], int size)
+    void show_arr(int arr[], int size)
     {
         for (int i = 0; i < size; i++)
         {
@@ -53,7 +54,7 @@ struct problems
         printf("\n");
     }
 
-    static int *range(int start, int end)
+    int *range(int start, int end)
     {
         int *arr;
         int index = 0;
@@ -67,7 +68,7 @@ struct problems
         return arr;
     }
 
-    static int *sort_accending(int arr[], int size)
+    int *sort_accending(int arr[], int size)
     {
         int *return_array;
         return_array = (int *)malloc(size * sizeof(int));
@@ -89,13 +90,12 @@ struct problems
  * @param size Size of the array
  * @return The arr in decensing order, or empty array if the array is empty.
  */
-    static int *sort_decending(int arr[], int size)
+    int *sort_decending(int arr[], int size)
     {
         if (size < 2)
         {
             return arr;
         }
-        
 
         int *return_array;
         return_array = (int *)malloc(size * sizeof(int));
@@ -114,7 +114,7 @@ struct problems
         // return return_array;
     }
 
-    static int find_index(int arr[], int size, int element)
+    int find_index(int arr[], int size, int element)
     {
         for (int i = 0; i < size; i++)
         {
@@ -130,4 +130,21 @@ struct problems
 
         return -1;
     }
+
+    int *get_all_indexes(int arr[], int size, int element)
+    {
+        int indexes[] = {};
+        int index = 0;
+
+        for (int i = 0; i < size; i++)
+        {
+            if (arr[i] == element)
+            {
+                indexes[index] = i;
+            }
+        }
+
+        return indexes;
+    }
+
 };

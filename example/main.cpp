@@ -1,4 +1,4 @@
-#include "../src/array_problems.h"
+#include "../src/array_problems.hpp"
 #include<iostream>
 
 int main()
