@@ -11,10 +11,3 @@ namespace strings
         return s;
     }
 } // namespace strings
-
-int main()
-{
-    string sentence = "Hello World";
-    char *lower_sentence = strings::to_lower(sentence);
-    printf("%c", lower_sentence);
-}
